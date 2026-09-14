@@ -1,0 +1,52 @@
+---
+title: 'Building a Zero-Cost Full-Stack Architecture with Next.js & Supabase'
+date: '2026-09-02'
+tags: ['full-stack', 'nextjs', 'supabase', 'architecture']
+summary: 'How to structure a clean, zero-cost production web app using Next.js App Router, Tailwind CSS, Supabase database storage, and Vercel serverless functions.'
+whatILearned: 'Leveraging free-tier serverless ecosystems to achieve 98+ Lighthouse scores without spending a single dollar.'
+readingTime: '5 min read'
+---
+
+Modern cloud platforms allow developers to deploy production-ready web applications entirely within free-tier quotas. By combining Next.js App Router, Tailwind CSS, Vercel Serverless Functions, and Supabase, you get enterprise performance for **$0/month**.
+
+## The Architecture Stack
+
+- **Framework**: Next.js App Router (TypeScript)
+- **Styling & Design System**: Tailwind CSS with custom HSL/Hex dark mode tokens
+- **Database & Storage**: Supabase Postgres (500MB DB) & Supabase Storage (1GB assets)
+- **Hosting & Serverless**: Vercel Hobby tier (100GB bandwidth, auto CI/CD)
+
+<Figure
+  src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop"
+  alt="Code editor showing Next.js serverless route code"
+  caption="Figure 1: Next.js API Route Handler performing Zod server-side validation and Supabase inserts."
+/>
+
+## Code Snippet: Serverless Route Handler
+
+```typescript
+import { NextResponse } from 'next/server';
+import { contactFormSchema } from '@/lib/schema';
+import { getSupabaseAdmin } from '@/lib/supabase';
+
+export async function POST(req: Request) {
+  const body = await req.json();
+  const parsed = contactFormSchema.safeParse(body);
+  
+  if (!parsed.success) {
+    return NextResponse.json({ success: false, errors: parsed.error.format() }, { status: 400 });
+  }
+  
+  // Insert to Supabase contacts table
+  const supabase = getSupabaseAdmin();
+  if (supabase) {
+    await supabase.from('contacts').insert([parsed.data]);
+  }
+  
+  return NextResponse.json({ success: true, message: 'Form submitted successfully!' });
+}
+```
+
+## Conclusion
+
+By strictly adhering to Clean Architecture principles—separating content loaders, UI component primitives, API route handlers, and design tokens—you create a codebase that is scalable, maintainable, and cost-effective.

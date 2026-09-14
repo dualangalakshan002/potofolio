@@ -1,0 +1,51 @@
+---
+title: 'Why I self-host n8n on Azure Container Apps'
+date: '2026-09-10'
+tags: ['automation', 'azure', 'devops', 'docker']
+summary: 'A deep dive into the cost vs. control trade-offs of self-hosting n8n workflows on serverless Azure container instances versus managed cloud solutions.'
+whatILearned: 'Cost vs control trade-offs of self-hosting n8n and managing persistent storage with PostgreSQL on serverless containers.'
+readingTime: '6 min read'
+---
+
+When scaling workflow automation and AI agent orchestration, off-the-shelf SaaS tiers can rapidly hit strict execution boundaries or per-workflow monthly costs. 
+
+To solve this, I designed a resilient, self-hosted deployment architecture for **n8n** running on **Azure Container Apps (ACA)** backed by an Azure Database for PostgreSQL serverless instance.
+
+## Architecture Overview
+
+Here is how the webhook payload flows from incoming HTTP triggers through to execution and notification:
+
+1. **Client / Webhook Trigger**: External webhooks (GitHub, forms, Slack) hit the custom domain endpoint.
+2. **Azure Container App**: Spins up or scales worker instances dynamically depending on current execution queues.
+3. **PostgreSQL & Redis**: Retains workflow execution logs, node states, and schedule timers.
+
+<Figure
+  src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=1000&auto=format&fit=crop"
+  alt="n8n workflow diagram showing webhook trigger and slack notification nodes"
+  caption="Figure 1: The complete triage workflow — from incoming webhook trigger to automated Slack notifications and database storage."
+/>
+
+## Key Benefits of Azure Container Apps for Workflows
+
+- **Scale to Zero**: When idle during overnight periods, compute costs drop to virtually zero.
+- **Persistent Storage Mounts**: Using Azure Files mounts for persistent `.n8n` configuration.
+- **Custom AI Nodes**: Direct execution of custom Python scripts and LangChain / LlamaIndex agent tools inside worker containers.
+
+```typescript
+// Sample n8n Webhook Payload Handler in TypeScript
+export async function handleWebhookPayload(payload: Record<string, unknown>) {
+  const { event, data } = payload;
+  console.log(`[n8n-trigger] Received event: ${event}`);
+  
+  if (event === 'contact_form_submitted') {
+    // Process notification & store audit log
+    return { status: 'processed', timestamp: new Date().toISOString() };
+  }
+  
+  return { status: 'ignored' };
+}
+```
+
+## Summary & Key Takeaways
+
+Self-hosting gives complete sovereignty over your data, removes artificial execution rate caps, and allows seamless integration with private LLMs and internal microservices.

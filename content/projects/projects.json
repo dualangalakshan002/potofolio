@@ -1,0 +1,83 @@
+[
+  {
+    "id": "1",
+    "title": "Self-Hosted Agentic AI & n8n Automation Engine",
+    "slug": "n8n-agentic-automation-engine",
+    "description": "Enterprise-grade self-hosted n8n and AI agent runtime built on Azure Container Apps with Postgres storage, Redis queueing, and webhook routing.",
+    "category": "Automation",
+    "year": "2026",
+    "result": "10+ hrs/wk saved",
+    "stackTags": ["n8n", "Azure Container Apps", "PostgreSQL", "Docker", "Python", "Webhooks"],
+    "thumbnail": "/images/projects/n8n-automation.webp",
+    "architectureDiagram": "/images/projects/n8n-architecture.png",
+    "demoUrl": "https://github.com/dualangalakshan002",
+    "githubUrl": "https://github.com/dualangalakshan002",
+    "featured": true,
+    "longDescription": "Designed and deployed a zero-downtime, event-driven automation platform using n8n Cloud and Azure Container Apps. Leveraged custom agent tool calling and AI workflows to automate ticket routing, automated PDF processing, and GitHub PR reviews.",
+    "highlights": [
+      "Reduced routine operational overhead by over 10 hours per week across development teams.",
+      "Engineered resilient error recovery and webhook queue retries using Redis and PostgreSQL.",
+      "Integrated OpenAI/Claude API functions directly into custom n8n workflow nodes."
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Cloud Native Microservices & HRM Platform",
+    "slug": "cloud-native-hrm-platform",
+    "description": "High-throughput Human Resource Management microservice backend engineered with Spring Boot, Spring Security JWT, Docker, and PostgreSQL.",
+    "category": "Cloud",
+    "year": "2026",
+    "result": "90s deployments",
+    "stackTags": ["Java", "Spring Boot", "Spring Security", "PostgreSQL", "Docker", "REST API"],
+    "thumbnail": "/images/projects/hrm-platform.webp",
+    "architectureDiagram": "/images/projects/hrm-architecture.png",
+    "demoUrl": "https://github.com/dualangalakshan002",
+    "githubUrl": "https://github.com/dualangalakshan002",
+    "featured": true,
+    "longDescription": "Developed a modular backend architecture featuring decoupled User and HR services, granular role-based access control (RBAC), JWT authentication, dynamic report generation, and automated database migrations.",
+    "highlights": [
+      "Achieved sub-90 second deployment pipelines with zero-downtime rolling container updates.",
+      "Implemented strict security policies and audit logging for sensitive payroll and employee records.",
+      "Engineered automated PDF pay-stub and report export services."
+    ]
+  },
+  {
+    "id": "3",
+    "title": "High-Performance Portfolio & Content Engine",
+    "slug": "high-performance-portfolio",
+    "description": "Zero-cost personal engineering portfolio and blog platform built with Next.js App Router, Tailwind CSS, MDX, and Supabase.",
+    "category": "Full-stack",
+    "year": "2026",
+    "result": "Lighthouse 98/100",
+    "stackTags": ["Next.js", "TypeScript", "Tailwind CSS", "MDX", "Supabase", "Vercel"],
+    "thumbnail": "/images/projects/portfolio-site.webp",
+    "demoUrl": "https://portfolio.vercel.app",
+    "githubUrl": "https://github.com/dualangalakshan002/potofolio",
+    "featured": true,
+    "longDescription": "Built a clean architectural portfolio adhering to modern UX principles, dark theme tokens, interactive project filters, MDX learning journal, custom Figure zoom components, and serverless contact handling.",
+    "highlights": [
+      "Attained 98+ Lighthouse performance, accessibility, and SEO scores.",
+      "Designed serverless contact API route with Zod validation, honeypot protection, and n8n webhook triggers.",
+      "Integrated zero-cost database persistence with Supabase Postgres and public Storage."
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Distributed Web Crawler & Log Pipeline",
+    "slug": "distributed-crawler-log-pipeline",
+    "description": "Asynchronous high-volume data ingestion pipeline built in Python with AsyncIO, ClickHouse, and Docker swarm orchestration.",
+    "category": "Open source",
+    "year": "2025",
+    "result": "50K req/min",
+    "stackTags": ["Python", "AsyncIO", "Redis", "ClickHouse", "Docker", "Prometheus"],
+    "thumbnail": "/images/projects/log-pipeline.webp",
+    "demoUrl": "https://github.com/dualangalakshan002",
+    "githubUrl": "https://github.com/dualangalakshan002",
+    "featured": false,
+    "longDescription": "Engineered an open-source concurrent log collector capable of streaming, parsing, and storing real-time network traffic and server diagnostics.",
+    "highlights": [
+      "Processed over 50,000 requests per minute with minimal memory footprint.",
+      "Built custom Grafana dashboards and Prometheus metrics exporters."
+    ]
+  }
+]
