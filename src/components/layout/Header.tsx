@@ -47,7 +47,7 @@ export function Header() {
           <div className="w-8 h-8 rounded-lg bg-[#636CF5]/15 border border-[#636CF5]/40 flex items-center justify-center text-[#636CF5] group-hover:bg-[#636CF5] group-hover:text-white transition-all">
             <Code2 className="w-4 h-4" />
           </div>
-          <span>yn<span className="text-[#636CF5]">.</span></span>
+          <span>Dulanga Lakshan<span className="text-[#636CF5]">.</span></span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -69,22 +69,7 @@ export function Header() {
             );
           })}
         </nav>
-
-        {/* Resume Button */}
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            download="Resume-Dulanga-Lakshan.pdf"
-          >
-            <Button variant="outline" size="sm" className="gap-2">
-              <FileText className="w-4 h-4 text-[#636CF5]" />
-              <span>Resume</span>
-            </Button>
-          </a>
-        </div>
-
+        
         {/* Mobile Toggle */}
         <div className="flex md:hidden items-center gap-2">
           <button

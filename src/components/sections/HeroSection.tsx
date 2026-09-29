@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, Terminal, Mail } from 'lucide-react';
+import { ArrowRight, Sparkles, Terminal, Mail, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 export function HeroSection() {
@@ -26,16 +26,15 @@ export function HeroSection() {
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#F0EEEB] tracking-tight leading-[1.15]">
-            I engineer systems that{' '}
+            Building smarter systems,{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#636CF5] via-[#868DF8] to-[#3ECF71]">
-              build, deploy, and run
+              one workflow at a time.
             </span>{' '}
-            themselves.
           </h1>
 
           {/* Intro Subhead */}
           <p className="text-lg sm:text-xl text-[#9D9B95] leading-relaxed max-w-2xl">
-            Computer Engineer specializing in full-stack web applications, cloud-native microservices, continuous integration pipelines, and autonomous AI workflow engines.
+            Computer Engineer passionate about full-stack development, cloud-native solutions, automation, and AI-powered workflows.
           </p>
 
           {/* Action CTAs */}
@@ -53,6 +52,18 @@ export function HeroSection() {
                 <span>Get in touch</span>
               </Button>
             </Link>
+
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Resume-Dulanga-Lakshan.pdf"
+            >
+              <Button variant="outline" size="lg" className="gap-2">
+                <FileText className="w-4 h-4 text-[#636CF5]" />
+                <span>Resume</span>
+              </Button>
+            </a>
           </div>
 
           {/* Key Tech Badges */}
@@ -62,9 +73,9 @@ export function HeroSection() {
             </span>
             <span className="px-2.5 py-1 rounded-md bg-[#141417] border border-[#2A2A30] text-[#9D9B95]">Next.js</span>
             <span className="px-2.5 py-1 rounded-md bg-[#141417] border border-[#2A2A30] text-[#9D9B95]">TypeScript</span>
-            <span className="px-2.5 py-1 rounded-md bg-[#141417] border border-[#2A2A30] text-[#9D9B95]">Spring Boot</span>
+            <span className="px-2.5 py-1 rounded-md bg-[#141417] border border-[#2A2A30] text-[#9D9B95]">React</span>
             <span className="px-2.5 py-1 rounded-md bg-[#141417] border border-[#2A2A30] text-[#9D9B95]">Docker</span>
-            <span className="px-2.5 py-1 rounded-md bg-[#141417] border border-[#2A2A30] text-[#9D9B95]">Azure / Vercel</span>
+            <span className="px-2.5 py-1 rounded-md bg-[#141417] border border-[#2A2A30] text-[#9D9B95]">Azure</span>
             <span className="px-2.5 py-1 rounded-md bg-[#141417] border border-[#2A2A30] text-[#9D9B95]">n8n & AI</span>
           </div>
         </div>

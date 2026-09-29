@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Cpu, Layers, BookOpen, CheckCircle2 } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
@@ -10,19 +12,35 @@ export function AboutMe() {
           {/* Visual Avatar / Profile Card */}
           <div className="lg:w-1/3 flex flex-col justify-center">
             <Card className="relative p-6 bg-[#141417] border-[#2A2A30] overflow-hidden group">
-              <div className="w-full aspect-square rounded-xl bg-gradient-to-br from-[#222228] to-[#141417] border border-[#2A2A30] flex flex-col items-center justify-center relative overflow-hidden mb-6">
-                {/* Code Terminal Graphic / Placeholder */}
-                <div className="w-24 h-24 rounded-full bg-[#636CF5]/10 border-2 border-[#636CF5]/40 flex items-center justify-center text-[#636CF5] shadow-lg shadow-[#636CF5]/10 mb-2">
-                  <Cpu className="w-12 h-12" />
+              <div className="w-full aspect-square rounded-xl bg-gradient-to-br from-[#222228] to-[#141417] border border-[#2A2A30] relative overflow-hidden mb-6 group">
+                <img
+                  src="/profile.png"
+                  alt="Dulanga Lakshan"
+                  className="w-full h-full object-cover object-center rounded-xl group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    // Fallback to placeholder graphic if profile.jpg is not found
+                    const target = e.currentTarget;
+                    target.style.display = 'none';
+                    const fallback = target.nextElementSibling as HTMLElement;
+                    if (fallback) {
+                      fallback.style.display = 'flex';
+                    }
+                  }}
+                />
+                {/* Fallback Graphic */}
+                <div className="hidden w-full h-full flex-col items-center justify-center bg-gradient-to-br from-[#222228] to-[#141417]">
+                  <div className="w-24 h-24 rounded-full bg-[#636CF5]/10 border-2 border-[#636CF5]/40 flex items-center justify-center text-[#636CF5] shadow-lg shadow-[#636CF5]/10 mb-2">
+                    <Cpu className="w-12 h-12" />
+                  </div>
+                  <span className="text-sm font-semibold text-[#F0EEEB]">Dulanga Lakshan</span>
+                  <span className="text-xs text-[#9D9B95]">Computer Engineer</span>
                 </div>
-                <span className="text-sm font-semibold text-[#F0EEEB]">Dulanga Lakshan</span>
-                <span className="text-xs text-[#9D9B95]">Computer Engineer</span>
               </div>
 
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-xs text-[#9D9B95] border-b border-[#2A2A30] pb-2">
                   <span>Location</span>
-                  <span className="text-[#F0EEEB] font-medium">Sri Lanka / Remote</span>
+                  <span className="text-[#F0EEEB] font-medium">Sri Lanka</span>
                 </div>
                 <div className="flex items-center justify-between text-xs text-[#9D9B95] border-b border-[#2A2A30] pb-2">
                   <span>Degree</span>
@@ -40,7 +58,7 @@ export function AboutMe() {
           <div className="lg:w-2/3 flex flex-col justify-center space-y-6">
             <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#636CF5] uppercase tracking-wider">
               <BookOpen className="w-4 h-4" />
-              <span>Background & Philosophy</span>
+              <span>Background</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F0EEEB] tracking-tight">
@@ -48,8 +66,11 @@ export function AboutMe() {
             </h2>
 
             <p className="text-base text-[#9D9B95] leading-relaxed">
-              My journey began in computer engineering with embedded systems, digital logic, and operating system fundamentals. Understanding how bytes move at the hardware level gives me a unique perspective on optimizing software performance, memory layouts, and network bandwidth.
-            </p>
+Computer Engineering undergraduate and AgentRuntime Labs intern with hands-on experience in full-stack
+development, backend systems, MCP-based automation, API integrations, and DevOps. Experienced with Go,
+TypeScript, Python, Java, React, and Node.js, including API development, testing, troubleshooting, and database
+driven applications. Currently strengthening skills in Microsoft Azure, cloud-native technologies, and machine
+learning, with a strong interest in building scalable and reliable software solutions.            </p>
 
             {/* Evolution Flow Pills */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
@@ -67,7 +88,7 @@ export function AboutMe() {
                   <Layers className="w-4 h-4" /> Current Stack
                 </div>
                 <p className="text-xs text-[#9D9B95]">
-                  Next.js, TypeScript, Spring Boot, Azure, Docker, Supabase.
+                  Next.js, React, TypeScript, Node.js, Azure, Docker, Supabase.
                 </p>
               </div>
 

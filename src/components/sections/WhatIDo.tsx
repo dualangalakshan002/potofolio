@@ -12,7 +12,7 @@ export function WhatIDo() {
       bgGlow: 'from-[#636CF5]/20 to-transparent',
       description:
         'Building responsive, fast, and accessible web applications with modern frontend frameworks and robust backend microservices.',
-      skills: ['Next.js (App Router)', 'TypeScript & React', 'Java & Spring Boot', 'RESTful APIs & GraphQL', 'Tailwind CSS & UI Systems'],
+      skills: ['Next.js (App Router)', 'TypeScript & React', 'RESTful APIs & GraphQL', 'Tailwind CSS & UI Systems'],
     },
     {
       title: 'Cloud & DevOps',
@@ -21,7 +21,7 @@ export function WhatIDo() {
       bgGlow: 'from-[#3ECF71]/20 to-transparent',
       description:
         'Architecting zero-downtime deployment pipelines, containerized environments, serverless endpoints, and infrastructure-as-code.',
-      skills: ['Docker & Containerization', 'Azure Container Apps', 'Vercel Serverless', 'CI/CD GitHub Actions', 'PostgreSQL & Supabase'],
+      skills: ['Docker & Containerization', 'Azure Container Apps', 'CI/CD GitHub Actions', 'PostgreSQL'],
     },
     {
       title: 'Automation & AI Workflows',
@@ -30,7 +30,7 @@ export function WhatIDo() {
       bgGlow: 'from-[#868DF8]/20 to-transparent',
       description:
         'Designing event-driven automations, self-hosted n8n workflow pipelines, webhook integrations, and agentic AI tool callers.',
-      skills: ['n8n Cloud & Self-Hosted', 'Agent Runtimes', 'Webhook Orchestration', 'LLM Function Calling', 'Python Scripting'],
+      skills: ['n8n Cloud & Self-Hosted', 'Agent Runtimes', 'Webhook Orchestration', 'LLM Function Calling'],
     },
   ];
 
@@ -46,9 +46,9 @@ export function WhatIDo() {
               What I Do
             </h2>
           </div>
-          <p className="text-sm text-[#9D9B95] max-w-md mt-2 md:mt-0">
+          {/* <p className="text-sm text-[#9D9B95] max-w-md mt-2 md:mt-0">
             End-to-end engineering across application interfaces, server infrastructures, and automated intelligent runtimes.
-          </p>
+          </p> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
