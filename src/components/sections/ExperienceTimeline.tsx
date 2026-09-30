@@ -1,61 +1,28 @@
 import React from 'react';
-import { Briefcase, Award, ExternalLink, Calendar, MapPin } from 'lucide-react';
+import { Briefcase, Calendar, Award, ExternalLink } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { TimelineItem } from '@/types';
 
 export function ExperienceTimeline() {
-  const experiences: TimelineItem[] = [
+  const experiences = [
     {
       id: '1',
-      title: 'Full-Stack & Automation Engineer',
-      organization: 'Affin Technologies',
-      period: '2024 - Present',
-      location: 'Sri Lanka',
-      description:
-        'Architecting enterprise HRM platforms, microservice auth gateways, and serverless workflow automation pipelines.',
+      title: 'Software Engineer - Intern',
+      organization: 'AgentRuntime Labs',
+      url: 'https://www.agentruntime.io/',
+      period: '06/2026 – Current',
       achievements: [
-        'Designed modular User & HR microservice backends using Spring Boot and Spring Security JWT.',
-        'Built automated n8n workflow engine saving 10+ operational hours per week across teams.',
-        'Engineered responsive Next.js frontend modules with dynamic PDF report generators.',
+        'Develop MCP-based automation tools and connectors that expose AgentRuntime workflows, runs, vault services, and platform tools to AI clients, expanding what external agents can safely orchestrate.',
+        'Delivered and supported integrations for Cursor, Claude / Claude Code, and ChatGPT — covering local configuration, remote HTTPS access, PAT bearer authentication, and tool discovery.',
+        'Engineer and validate Go, TypeScript, and Python SDK components, verifying runtime headers, connector routing, schemas, and client–server communication.',
+        'Diagnose and resolve authentication, handshake, schema, connection, and tool-call issues; author setup guides, test checklists, and handover documentation that accelerate onboarding.',
       ],
-      type: 'role',
-      badge: 'Full-Time',
-    },
-    {
-      id: '2',
-      title: 'Software & Cloud Engineering Intern',
-      organization: 'TechStack Solutions',
-      period: '2023 - 2024',
-      location: 'Sri Lanka',
-      description:
-        'Developed cloud-native APIs, containerized microservices, and continuous integration workflows.',
-      achievements: [
-        'Containerized 5 legacy services into Dockerized microservices deployed on cloud container instances.',
-        'Reduced deployment validation times from 15 minutes down to 90 seconds using GitHub Actions.',
-        'Implemented database indexing and query optimization on PostgreSQL databases.',
-      ],
-      type: 'role',
       badge: 'Internship',
-    },
-    {
-      id: '3',
-      title: 'Undergraduate Computer Engineer',
-      organization: 'University Engineering Faculty',
-      period: '2021 - 2025',
-      location: 'Sri Lanka',
-      description:
-        'Completed Bachelor of Science in Computer Engineering with focus on embedded systems, OS internals, and distributed networks.',
-      achievements: [
-        'Published research project on distributed edge computing and real-time sensor pipelines.',
-        'Led university coding hackathon team achieving 1st place in cloud automation challenge.',
-      ],
-      type: 'role',
-      badge: 'Education',
     },
   ];
 
-  const certifications: TimelineItem[] = [
+  /*
+  const certifications = [
     {
       id: 'c1',
       title: 'AWS Certified Solutions Architect – Associate',
@@ -64,7 +31,6 @@ export function ExperienceTimeline() {
       description:
         'Validated expertise in resilient cloud architectures, Serverless Lambda, VPC networking, and IAM policies.',
       achievements: ['Infrastructure as Code', 'Cloud Security & Compliance'],
-      type: 'certification',
       badge: 'Certified',
     },
     {
@@ -75,7 +41,6 @@ export function ExperienceTimeline() {
       description:
         'Comprehensive knowledge of Azure cloud services, Azure Container Apps, and cost governance.',
       achievements: ['Azure Serverless', 'Container Instances'],
-      type: 'certification',
       badge: 'Certified',
     },
     {
@@ -86,66 +51,68 @@ export function ExperienceTimeline() {
       description:
         'Advanced certification in self-hosted n8n orchestrations, custom node creation, and webhook security.',
       achievements: ['Event Driven Pipelines', 'AI Tool Calling'],
-      type: 'certification',
       badge: 'Specialist',
     },
   ];
+  */
 
   return (
-    <section className="py-16 md:py-24 border-t border-[#2A2A30]/40">
+    <section id="experience" className="py-16 md:py-24 border-t border-[#2A2A30]/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Work Timeline Column */}
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-12 space-y-8">
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#636CF5] uppercase tracking-wider mb-2">
                 <Briefcase className="w-4 h-4" />
                 <span>Career History</span>
               </div>
-              <h2 className="text-3xl font-extrabold text-[#F0EEEB] tracking-tight">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F0EEEB] tracking-tight">
                 Work Experience
               </h2>
             </div>
 
-            {/* Vertical Timeline */}
+            {/* Timeline List */}
             <div className="relative pl-6 border-l-2 border-[#2A2A30] space-y-8">
               {experiences.map((exp) => (
                 <div key={exp.id} className="relative group">
                   {/* Timeline Dot */}
                   <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-[#141417] border-2 border-[#636CF5] group-hover:bg-[#636CF5] group-hover:scale-125 transition-all" />
 
-                  <Card hoverable className="bg-[#141417] border-[#2A2A30] p-6">
-                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                      <h3 className="text-lg font-bold text-[#F0EEEB]">
+                  <Card hoverable className="bg-[#141417] border-[#2A2A30] p-6 sm:p-8 shadow-xl">
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                      <h3 className="text-xl font-bold text-[#F0EEEB]">
                         {exp.title}
                       </h3>
-                      <Badge variant="accent">{exp.badge}</Badge>
+                      <Badge variant="accent" className="px-3 py-1 text-xs">
+                        {exp.badge}
+                      </Badge>
                     </div>
 
-                    <div className="flex items-center gap-4 text-xs text-[#9D9B95] mb-3">
-                      <span className="font-medium text-[#636CF5]">{exp.organization}</span>
+                    <div className="flex items-center gap-3 text-xs text-[#9D9B95] mb-6">
+                      {exp.url ? (
+                        <a
+                          href={exp.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-[#636CF5] hover:text-[#868DF8] hover:underline flex items-center gap-1.5 transition-colors"
+                        >
+                          <span>{exp.organization}</span>
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      ) : (
+                        <span className="font-semibold text-[#636CF5]">{exp.organization}</span>
+                      )}
                       <span>•</span>
                       <span className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3 text-[#5C5B57]" /> {exp.period}
+                        <Calendar className="w-3.5 h-3.5 text-[#5C5B57]" /> {exp.period}
                       </span>
-                      {exp.location && (
-                        <>
-                          <span>•</span>
-                          <span className="flex items-center gap-1">
-                            <MapPin className="w-3 h-3 text-[#5C5B57]" /> {exp.location}
-                          </span>
-                        </>
-                      )}
                     </div>
 
-                    <p className="text-sm text-[#9D9B95] mb-4 leading-relaxed">
-                      {exp.description}
-                    </p>
-
-                    <ul className="space-y-1.5">
+                    <ul className="space-y-3">
                       {exp.achievements.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-xs text-[#F0EEEB]">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#3ECF71] mt-1 shrink-0" />
+                        <li key={idx} className="flex items-start gap-3 text-sm text-[#9D9B95] leading-relaxed">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#3ECF71] mt-2 shrink-0" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -156,7 +123,8 @@ export function ExperienceTimeline() {
             </div>
           </div>
 
-          {/* Certifications Column */}
+          {/* Certifications Column (Commented Out for Future Use) */}
+          {/*
           <div className="lg:col-span-5 space-y-6">
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#3ECF71] uppercase tracking-wider mb-2">
@@ -180,7 +148,7 @@ export function ExperienceTimeline() {
                         {cert.organization}
                       </p>
                     </div>
-                    <Badge variant="green">{cert.badge}</Badge>
+                    <Badge variant="subtle">{cert.badge}</Badge>
                   </div>
 
                   <p className="text-xs text-[#9D9B95] mb-3 leading-relaxed">
@@ -198,6 +166,7 @@ export function ExperienceTimeline() {
               ))}
             </div>
           </div>
+          */}
         </div>
       </div>
     </section>
