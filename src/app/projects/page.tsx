@@ -24,7 +24,7 @@ export default function ProjectsPage() {
             Featured Projects
           </h1>
           <p className="text-base text-[#9D9B95] leading-relaxed">
-            Real-world systems, microservices, and automation workflows engineered with architectural depth, concrete metrics, and zero-cost cloud services.
+            Real-world systems and automation workflows engineered with architectural depth, concrete metrics, and zero-cost cloud services.
           </p>
         </div>
 

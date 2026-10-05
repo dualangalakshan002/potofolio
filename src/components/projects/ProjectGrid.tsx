@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Project, ProjectCategory } from '@/types';
 import { ProjectCard } from './ProjectCard';
+import { ProjectModal } from './ProjectModal';
 
 export interface ProjectGridProps {
   projects: Project[];
@@ -10,6 +11,7 @@ export interface ProjectGridProps {
 
 export function ProjectGrid({ projects }: ProjectGridProps) {
   const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>('All');
+  const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
 
   const categories: ProjectCategory[] = ['All', 'Full-stack', 'Cloud', 'Automation', 'Open source'];
 
@@ -44,7 +46,11 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
       {filteredProjects.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onSelect={(p) => setActiveModalProject(p)}
+            />
           ))}
         </div>
       ) : (
@@ -52,6 +58,12 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
           <p className="text-sm text-[#9D9B95]">No projects found for category &quot;{selectedCategory}&quot;.</p>
         </div>
       )}
+
+      {/* Project Preview Popup Modal */}
+      <ProjectModal
+        project={activeModalProject}
+        onClose={() => setActiveModalProject(null)}
+      />
     </div>
   );
 }
