@@ -30,14 +30,14 @@ export function WhatIDo() {
       bgGlow: 'from-[#868DF8]/20 to-transparent',
       description:
         'Designing event-driven automations, self-hosted n8n workflow pipelines, webhook integrations, and agentic AI tool callers.',
-      skills: ['n8n Cloud & Self-Hosted', 'Agent Runtimes', 'Webhook Orchestration', 'LLM Function Calling'],
+      skills: ['n8n Cloud', 'Agent Runtimes', 'Webhook Orchestration', 'LLM Function Calling'],
     },
   ];
 
   return (
-    <section className="py-16 md:py-24 border-t border-[#2A2A30]/40">
+    <section className="py-10 md:py-12 border-t border-[#2A2A30]/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
           <div>
             <span className="text-xs font-semibold text-[#636CF5] uppercase tracking-wider">
               Core Capabilities

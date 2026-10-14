@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button';
 
 export function CtaBanner() {
   return (
-    <section className="py-16 border-t border-[#2A2A30]/40">
+    <section className="py-10 md:py-12 border-t border-[#2A2A30]/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#141417] via-[#1c1c24] to-[#141417] border border-[#636CF5]/30 p-8 sm:p-12 shadow-2xl">
           {/* Decorative Glow */}

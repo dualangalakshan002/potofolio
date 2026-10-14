@@ -8,7 +8,7 @@ import { CtaBanner } from '@/components/sections/CtaBanner';
 
 export default function HomePage() {
   return (
-    <div className="space-y-4">
+    <div className="flex flex-col">
       <HeroSection />
       <AboutMe />
       <WhatIDo />

@@ -84,5 +84,28 @@
       "Developed RESTful APIs for user interactions, message management, and data operations.",
       "Ensured smooth and responsive real-time communication between users."
     ]
+  },
+  {
+    "id": "5",
+    "title": "Smart Blind Stick for Safer Navigation",
+    "slug": "smart-blind-stick",
+    "description": "Designed and developed a smart assistive navigation device to support visually impaired individuals with safer and more independent mobility, combining embedded systems and sensor-based technology for real-time obstacle detection and immediate user feedback.",
+    "category": "Open source",
+    "year": "2024",
+    "result": "Assistive Technology",
+    "stackTags": ["Arduino Uno", "Ultrasonic Sensors", "Embedded Systems", "C/C++", "Buzzer", "Vibration Motor"],
+    "thumbnail": "/images/projects/blind-stick.png",
+    "demoUrl": "",
+    "githubUrl": "",
+    "featured": true,
+    "longDescription": "Designed and developed a smart assistive navigation device to support visually impaired individuals with safer and more independent mobility. The project combines embedded systems and sensor-based technology to provide real-time obstacle detection and immediate user feedback through audio and vibration alerts.",
+    "highlights": [
+      "Real-Time Obstacle Detection – Continuously detects objects in the user's path using ultrasonic sensors.",
+      "Dual Ultrasonic Sensors – Improves obstacle detection coverage and navigation awareness.",
+      "Three-Level Alert System – Provides different warning levels based on the distance to an obstacle.",
+      "Dual Feedback Mechanism – Uses both buzzer alerts and vibration motor feedback for reliable user notifications.",
+      "Portable and lightweight design suitable for indoor and outdoor use.",
+      "Low-cost implementation using readily available components for wider accessibility."
+    ]
   }
 ]

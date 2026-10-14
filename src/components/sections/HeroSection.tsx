@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button';
 
 export function HeroSection() {
   return (
-    <section className="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+    <section className="relative pt-12 pb-10 md:pt-16 md:pb-12 overflow-hidden">
       {/* Subtle Background Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#636CF5]/10 blur-[120px] rounded-full pointer-events-none" />
 

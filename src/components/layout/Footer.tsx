@@ -5,9 +5,9 @@ import { GithubIcon, LinkedinIcon } from '@/components/ui/SocialIcons';
 
 export function Footer() {
   return (
-    <footer className="bg-[#0C0C0E] border-t border-[#2A2A30] pt-12 pb-8 mt-auto">
+    <footer className="bg-[#0C0C0E] border-t border-[#2A2A30] py-12 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-[#2A2A30]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-3">
             <Link href="/" className="inline-flex items-center gap-2 text-[#F0EEEB] font-bold text-xl">
@@ -62,7 +62,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/dulanga-lakshan-97907a26b/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 hover:text-[#F0EEEB] transition-colors group"
@@ -74,7 +74,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:contact@dulangalakshan.dev"
+                  href="mailto:dg.dulanga.lakshan@gmail.com"
                   className="inline-flex items-center gap-1.5 hover:text-[#F0EEEB] transition-colors group"
                 >
                   <Mail className="w-4 h-4 text-[#636CF5]" />
@@ -84,16 +84,6 @@ export function Footer() {
               </li>
             </ul>
           </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#5C5B57]">
-          <p suppressHydrationWarning>© {new Date().getFullYear()} Dulanga Lakshan. Built with Next.js, Tailwind CSS & Supabase.</p>
-          <p className="flex items-center gap-1">
-            <span>Zero-Cost Stack</span>
-            <span>•</span>
-            <span className="text-[#3ECF71] font-medium">$0/mo Infra</span>
-          </p>
         </div>
       </div>
     </footer>

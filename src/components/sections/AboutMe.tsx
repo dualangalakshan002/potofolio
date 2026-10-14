@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/Card';
 
 export function AboutMe() {
   return (
-    <section id="about" className="py-16 md:py-24 border-t border-[#2A2A30]/40">
+    <section id="about" className="py-10 md:py-12 border-t border-[#2A2A30]/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-stretch gap-12">
           {/* Visual Avatar / Profile Card */}
@@ -108,10 +108,10 @@ learning, with a strong interest in building scalable and reliable software solu
                 <CheckCircle2 className="w-4 h-4 text-[#3ECF71] mt-0.5 shrink-0" />
                 <span><strong className="text-white">Clean Architecture:</strong> Decoupled logic, typed interfaces, and zero-bloat codebases.</span>
               </div>
-              <div className="flex items-start gap-2.5 text-sm text-[#F0EEEB]">
+              {/* <div className="flex items-start gap-2.5 text-sm text-[#F0EEEB]">
                 <CheckCircle2 className="w-4 h-4 text-[#3ECF71] mt-0.5 shrink-0" />
                 <span><strong className="text-white">Zero-Cost Pragmatism:</strong> Maximizing serverless & free-tier cloud quotas without sacrificing scalability.</span>
-              </div>
+              </div> */}
               <div className="flex items-start gap-2.5 text-sm text-[#F0EEEB]">
                 <CheckCircle2 className="w-4 h-4 text-[#3ECF71] mt-0.5 shrink-0" />
                 <span><strong className="text-white">Autonomous Automation:</strong> Building self-healing CI/CD pipelines and event-driven AI runtimes.</span>
